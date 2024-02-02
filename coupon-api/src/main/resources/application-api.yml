@@ -1,0 +1,19 @@
+
+spring:
+  application:
+    name: coupon-api
+server:
+  port: 8080
+  tomcat:
+    mbeanregistry:
+      enabled: true
+
+management:
+  metrics:
+    tags:
+      application:
+        ${spring.application.name}
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
